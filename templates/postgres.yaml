@@ -1,0 +1,53 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.database.name }}-service
+  labels:
+    run: {{ .Values.database.name }}-service
+spec:
+  ports:
+    - protocol: TCP
+      port: {{ .Values.database.port }}
+      targetPort: 5432
+  selector:
+    app: {{ .Values.database.name }}
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: {{ .Values.database.name }}
+  name: {{ .Values.database.name }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Values.database.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.database.name }}
+    spec:
+      containers:
+        - image: {{ .Values.database.image }}
+          name: {{ .Values.database.name }}
+          resources: {}
+          ports:
+          - containerPort: 5432
+          env:
+          - name: POSTGRES_USER
+            valueFrom:
+              secretKeyRef:
+                name: postgres-secrets
+                key: username
+          - name: POSTGRES_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: postgres-secrets
+                key: password
+      imagePullSecrets:
+        - name: regcred
+status: {}

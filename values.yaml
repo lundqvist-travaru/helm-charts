@@ -1,0 +1,12 @@
+tls:
+  certPath: <PATH TO CERT>
+  keyPath: <PATH TO KEY>
+
+database:
+  image: postgres
+  username: root
+  password: root
+  port: 5432
+
+
+
