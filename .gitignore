@@ -1,0 +1,2 @@
+# Ignore packaged helm chart
+*.tgz
