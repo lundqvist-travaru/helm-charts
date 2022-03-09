@@ -1,6 +1,6 @@
 {{- $serviceName := "{{ .Values.database.name }}-service" -}}
-{{- $secret := lookup "v1" "Service" "Default" $serviceName -}}
-{{- if $secret -}}
+{{- $service := lookup "v1" "Service" "Default" $serviceName -}}
+{{- if $service -}}
 {{- else -}}
 apiVersion: v1
 kind: Service
@@ -15,9 +15,14 @@ spec:
       targetPort: 5432
   selector:
     app: {{ .Values.database.name }}
+{{- end -}}
 
 ---
 
+{{- $deploymentName := "{{ .Values.database.name }}" -}}
+{{- $service := lookup "apps/v1" "Deployment" "Default" $serviceName -}}
+{{- if $service -}}
+{{- else -}}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -55,3 +60,4 @@ spec:
       imagePullSecrets:
         - name: regcred
 status: {}
+{{- end -}}
