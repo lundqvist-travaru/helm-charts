@@ -1,7 +1,7 @@
-{{- $serviceName := "{{ .Values.database.name }}-service" -}}
-{{- $service := lookup "v1" "Service" "Default" $serviceName -}}
-{{- if $service -}}
-{{- else -}}
+{{- $serviceName := "{{ .Values.database.name }}-service" }}
+{{- $service := lookup "v1" "Service" "Default" $serviceName }}
+{{- if $service }}
+{{- else }}
 apiVersion: v1
 kind: Service
 metadata:
@@ -15,13 +15,13 @@ spec:
     targetPort: 5432
   selector:
     app: {{ .Values.database.name }}
-{{- end -}}
+{{- end }}
 
 ---
 
 {{- $deploymentName := "{{ .Values.database.name }}" -}}
-{{- $service := lookup "apps/v1" "Deployment" "Default" $serviceName -}}
-{{- if $service -}}
+{{- $deployment := lookup "apps/v1" "Deployment" "Default" $deploymentName -}}
+{{- if $deployment -}}
 {{- else -}}
 apiVersion: apps/v1
 kind: Deployment
