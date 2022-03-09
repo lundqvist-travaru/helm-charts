@@ -10,9 +10,9 @@ metadata:
     run: {{ .Values.database.name }}-service
 spec:
   ports:
-    - protocol: TCP
-      port: {{ .Values.database.port }}
-      targetPort: 5432
+  - protocol: TCP
+    port: {{ .Values.database.port }}
+    targetPort: 5432
   selector:
     app: {{ .Values.database.name }}
 {{- end -}}
