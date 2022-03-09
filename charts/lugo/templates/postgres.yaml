@@ -1,3 +1,7 @@
+{{- $serviceName := "{{ .Values.database.name }}-service" -}}
+{{- $secret := lookup "v1" "Service" {{ .Release.Namespace | quote }} $serviceName -}}
+{{- if $secret -}}
+{{- else -}}
 apiVersion: v1
 kind: Service
 metadata:
