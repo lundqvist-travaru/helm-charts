@@ -7,7 +7,7 @@ Since the repository is private you will need an [access token](https://github.c
 2. Package the helm chart  
 `helm package path/to/chart`
 
-3. The result of `helm package` is a zipped tar archive (*.tgz). Push the file to Github Packages  
+3. The result of `helm package` is a zipped tar archive (*.tgz). Push the archive to Github Packages  
 `helm push mychart.tgz oci://ghcr.io/myorg/mychart`
 
 
