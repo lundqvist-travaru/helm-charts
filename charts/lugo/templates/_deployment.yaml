@@ -1,4 +1,4 @@
-{{- define "lugo.deployment-dotnet.tpl" }}
+{{- define "lugo.deployment-dotnet" }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -29,7 +29,7 @@ template:
         - containerPort: {{ .Values.service.targetPort }}
 {{- end }}
 
-{{- define "lugo.deployment-node.tpl" }}
+{{- define "lugo.deployment-node" }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
