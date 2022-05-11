@@ -2,15 +2,15 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-labels:
+  labels:
     app: {{ .Release.Name }}
-name: {{ .Release.Name }}
+  name: {{ .Release.Name }}
 spec:
-replicas: {{ .Values.service.replicas }}
-selector:
+  replicas: {{ .Values.service.replicas }}
+  selector:
     matchLabels:
-    app: {{ .Release.Name }}
-template:
+      app: {{ .Release.Name }}
+  template:
     metadata:
     labels:
         app: {{ .Release.Name }}
