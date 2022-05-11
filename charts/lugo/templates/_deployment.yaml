@@ -17,16 +17,16 @@ template:
     spec:
     containers:
     - name: {{ .Release.Name }}
-        image: {{ .Values.service.image }}
-        imagePullPolicy: Never
-        env:
-        {{- range $key, $value := .Values.service.environmentVariables }}
-        - name: {{ $key }}
-          value: {{ $value | quote }}
-        {{- end }}
-        resources: {}
-        ports:
-        - containerPort: {{ .Values.service.targetPort }}
+      image: {{ .Values.service.image }}
+      imagePullPolicy: Never
+      env:
+      {{- range $key, $value := .Values.service.environmentVariables }}
+      - name: {{ $key }}
+        value: {{ $value | quote }}
+      {{- end }}
+      resources: {}
+      ports:
+      - containerPort: {{ .Values.service.targetPort }}
 {{- end }}
 
 {{- define "lugo.deployment-node" }}
