@@ -22,7 +22,7 @@ template:
         env:
         {{- range $key, $value := .Values.service.environmentVariables }}
         - name: {{ $key }}
-        value: {{ $value | quote }}
+          value: {{ $value | quote }}
         {{- end }}
         resources: {}
         ports:
