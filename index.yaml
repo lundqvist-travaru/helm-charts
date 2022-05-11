@@ -3,6 +3,16 @@ entries:
   lugo:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2022-05-11T10:28:48.749439329Z"
+    description: A Helm chart for Kubernetes
+    digest: 9ac2683f8b1a46d1f3bcbbbeca91acd80ed7978aabf370f49e6777709d769f8a
+    name: lugo
+    type: library
+    urls:
+    - https://github.com/lundqvist-travaru/helm-charts/releases/download/lugo-1.2.22/lugo-1.2.22.tgz
+    version: 1.2.22
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2022-05-11T10:25:06.725711652Z"
     description: A Helm chart for Kubernetes
     digest: 89f30f832c6dbb131382fd65ef7ddc68b6fd6cfa00917454c40e9bf33ff8737a
