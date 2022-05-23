@@ -25,7 +25,7 @@ spec:
           value: {{ $value | quote }}
         {{- end }}
         {{- if .Values.service.database }}
-        {{- with .Values.service.database }}
+        {{- range .Values.service.database }}
         {{- $stringName := print "ConnectionStrings__" .name}}
         - name: {{ $stringName }}
           valueFrom:
