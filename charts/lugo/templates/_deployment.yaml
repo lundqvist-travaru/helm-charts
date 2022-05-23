@@ -26,12 +26,12 @@ spec:
         {{- end }}
         {{- if .Values.service.database }}
         {{- with .Values.service.database }}
-        {{- $stringName := print "ConnectionStrings__" name}}
+        {{- $stringName := print "ConnectionStrings__" .name}}
         - name: {{ $stringName }}
           valueFrom:
             secretKeyRef:
               name: {{ .Release.Name }}-postgres-secrets
-              key: {{ name }}
+              key: {{ .name }}
         {{- end }}
         {{- end }}
         resources: {}
