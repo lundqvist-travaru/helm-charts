@@ -1,4 +1,5 @@
 {{- define "lugo.deployment-dotnet" }}
+{{- $releaseName := .Release.Name }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -26,11 +27,11 @@ spec:
         {{- end }}
         {{- if .Values.service.database }}
         {{- range .Values.service.database }}
-        {{- $stringName := print "ConnectionStrings__" .name}}
+        {{- $stringName := print "ConnectionStrings__" .name }}
         - name: {{ $stringName }}
           valueFrom:
             secretKeyRef:
-              name: {{ .Release.Name }}-postgres-secrets
+              name: {{ $releaseName }}-postgres-secrets
               key: {{ .name }}
         {{- end }}
         {{- end }}
