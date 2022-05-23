@@ -24,6 +24,16 @@ spec:
         - name: {{ $key }}
           value: {{ $value | quote }}
         {{- end }}
+        {{- if .Values.service.database }}
+        {{- with .Values.service.database }}
+        {{- $stringName := print "ConnectionStrings__" name}}
+        - name: {{ $stringName }}
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Release.Name }}-postgres-secrets
+              key: {{ name }}
+        {{- end }}
+        {{- end }}
         resources: {}
         ports:
         - containerPort: {{ .Values.service.targetPort }}
