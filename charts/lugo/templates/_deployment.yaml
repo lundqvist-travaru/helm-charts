@@ -19,7 +19,7 @@ spec:
       containers:
       - name: {{ .Release.Name }}
         image: {{ .Values.service.image }}
-        imagePullPolicy: Never
+        imagePullPolicy: {{ .Values.service.pullPolicy }}
         env:
         {{- range $key, $value := .Values.service.environmentVariables }}
         - name: {{ $key }}
