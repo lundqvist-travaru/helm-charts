@@ -41,7 +41,7 @@ spec:
 {{- end }}
 
 {{- define "lugo.deployment-node" }}
-{{- $releaseName := .Values.service.nameOverride | default .Release.Name | quote  }}
+{{- $releaseName :=  default .Release.Name .Values.releaseNameOverride }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
