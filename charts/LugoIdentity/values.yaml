@@ -21,9 +21,9 @@ service:
 
 global:
   database:
-    host: lugo-db.csax7wgulkxv.eu-north-1.rds.amazonaws.com 
-    username: lundqvist
-    password: test123!
+    host: postgres-service 
+    username: root 
+    password: root 
     port: 5432
 
   tls:
