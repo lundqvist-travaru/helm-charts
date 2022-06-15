@@ -1,23 +1,23 @@
 {{- define "lugo.deployment-dotnet" }}
-{{- $releaseName := .Release.Name }}
+{{- $releaseName :=  default .Release.Name .Values.releaseNameOverride }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: {{ .Release.Name }}
-  name: {{ .Release.Name }}
+    app: {{ $releaseName }}
+  name: {{ $releaseName }}
 spec:
   replicas: {{ .Values.service.replicas }}
   selector:
     matchLabels:
-      app: {{ .Release.Name }}
+      app: {{ $releaseName }}
   template:
     metadata:
       labels:
-        app: {{ .Release.Name }}
+        app: {{ $releaseName }}
     spec:
       containers:
-      - name: {{ .Release.Name }}
+      - name: {{ $releaseName }}
         image: {{ .Values.service.image }}
         imagePullPolicy: {{ .Values.service.pullPolicy }}
         env:
@@ -41,24 +41,25 @@ spec:
 {{- end }}
 
 {{- define "lugo.deployment-node" }}
+{{- $releaseName := .Values.service.nameOverride | default .Release.Name | quote  }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: {{ .Release.Name }}
-  name: {{ .Release.Name }}
+    app: {{ $releaseName }}
+  name: {{ $releaseName }}
 spec:
   replicas: {{ .Values.service.replicas }}
   selector:
     matchLabels:
-      app: {{ .Release.Name }}
+      app: {{ $releaseName }}
   template:
     metadata:
       labels:
-        app: {{ .Release.Name }}
+        app: {{ $releaseName }}
     spec:
       containers:
-      - name: {{ .Release.Name }}
+      - name: {{ $releaseName }}
         image: {{ .Values.service.image }}
         env:
         {{- range $key, $value := .Values.service.environmentVariables }}
@@ -74,12 +75,12 @@ spec:
         - name: DB_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: {{ .Release.Name }}-postgres-secrets
+              name: {{ $releaseName }}-postgres-secrets
               key: password
         - name: DB_USER
           valueFrom:
             secretKeyRef:
-              name: {{ .Release.Name }}-postgres-secrets
+              name: {{ $releaseName }}-postgres-secrets
               key: username 
         resources: {}
         ports:
