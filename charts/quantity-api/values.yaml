@@ -12,14 +12,8 @@ service:
     DB_DATABASE: "quantity"
 
 global:
-  github:
-    username: larsson-mikael
-    access_token: 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
-
   database:
-    internal: true
-    name: postgres
-    image: postgres
+    host: host.minikube.interal
     username: root
     password: root
     port: 5432
