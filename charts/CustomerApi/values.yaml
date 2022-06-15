@@ -1,0 +1,30 @@
+service:
+  name: logic
+  image: customer:latest
+  repositoryName: CustomerApi
+  port: 80
+  targetPort: 80
+  replicas: 1
+  environmentVariables:
+    ASPNETCORE_ENVIRONMENT: Development
+  database:
+  - name: DefaultConnection
+    databaseName: lugo_customerdb
+
+global:
+  github:
+    username: USERNAME 
+    access_token: TOKEN 
+
+  database:
+    host: host.minikube.internal
+    username: root
+    password: root
+    port: 5432
+
+  tls:
+    cert: |
+      xxx
+
+    key: |
+      xxx

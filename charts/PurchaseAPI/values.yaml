@@ -1,0 +1,31 @@
+service:
+  name: purchase
+  image: purchase:latest
+  repositoryName: PurchaseAPI
+  port: 80
+  targetPort: 80
+  replicas: 1
+  environmentVariables:
+    ASPNETCORE_ENVIRONMENT: Development
+    MASSTRANSIT: false
+  database:
+  - name: PurchaseConnection
+    databaseName: lugo_Purchase
+
+global:
+  github:
+    username: USERNAME 
+    access_token: TOKEN 
+
+  database:
+    host: host.minikube.internal
+    username: root
+    password: root
+    port: 5432
+
+  tls:
+    cert: |
+      xxx
+
+    key: |
+      xxx

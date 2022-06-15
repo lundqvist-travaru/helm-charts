@@ -1,0 +1,31 @@
+service:
+  name: productomatic
+  image: productomatic:latest
+  repositoryName: productomatic
+  port: 80
+  targetPort: 80
+  replicas: 1
+  environmentVariables:
+    ASPNETCORE_ENVIRONMENT: Development
+    MASSTRANSIT: false
+  database:
+  - name: ProductomaticConnection
+    databaseName: lugo_Productomatic
+
+global:
+  github:
+    username: USERNAME 
+    access_token: TOKEN 
+
+  database:
+    host: host.minikube.internal
+    username: root
+    password: root
+    port: 5432
+
+  tls:
+    cert: |
+      xxx
+
+    key: |
+      xxx

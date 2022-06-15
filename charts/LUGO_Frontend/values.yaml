@@ -1,0 +1,35 @@
+service:
+  name: frontend
+  image: 879032840002.dkr.ecr.eu-north-1.amazonaws.com/lugo_frontend:latest-dev
+  pullPolicy: Never
+  port: 80
+  targetPort: 80
+  replicas: 1
+  
+  environmentVariables:
+    IDENTITY_PUBLIC_URL: "https://identity.lugo.local"
+    ASPNETCORE_ENVIRONMENT: "Development"
+    UseAuth: "true"
+    IdentityBaseAddress: "http://identity-service" 
+    IdentityRedirectUri: "https://lugo.local"
+
+  ingress:
+    host: lugo.local
+
+global:
+  database:
+    host: postgres
+    username: root
+    password: root
+    port: 5432
+
+  tls:
+    cert: |
+      alsdkjflaksdjfklajsdf
+
+    key: |
+      laksjdflkasjdflkjaskldf
+
+
+
+

@@ -1,0 +1,33 @@
+service:
+  name: logic
+  image: order:latest
+  repositoryName: LogicAPI
+  port: 80
+  targetPort: 80
+  replicas: 1
+  environmentVariables:
+    ASPNETCORE_ENVIRONMENT: Development
+    MASSTRANSIT: false
+  database:
+  - name: DefaultConnection
+    databaseName: lundqvist_order
+  - name: OrderStateConnection
+    databaseName: OrderState
+
+global:
+  github:
+    username: USERNAME 
+    access_token: TOKEN 
+
+  database:
+    host: host.minikube.internal
+    username: root
+    password: root
+    port: 5432
+
+  tls:
+    cert: |
+      xxx
+
+    key: |
+      xxx

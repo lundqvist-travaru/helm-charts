@@ -1,0 +1,34 @@
+service:
+  name: identity
+  image: 879032840002.dkr.ecr.eu-north-1.amazonaws.com/lugoidentity:latest-dev
+  pullPolicy: Never
+  port: 80
+  targetPort: 80
+  replicas: 1
+
+  environmentVariables:
+    IDENTITY_PUBLIC_URL: http://identity.lugo.local
+    ASPNETCORE_ENVIRONMENT: Development
+    IdentityBaseAddress: http://identity-service
+    IdentityRedirectUri: https://lugo.local
+
+  ingress:
+    host: identity.lugo.local  
+
+  database:
+  - name: DefaultConnection
+    databaseName: identity
+
+global:
+  database:
+    host: lugo-db.csax7wgulkxv.eu-north-1.rds.amazonaws.com 
+    username: lundqvist
+    password: test123!
+    port: 5432
+
+  tls:
+    cert: |
+      test
+
+    key: |
+      test

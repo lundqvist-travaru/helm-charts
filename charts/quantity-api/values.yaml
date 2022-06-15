@@ -1,0 +1,32 @@
+service:
+  name: quantity
+  image: quantity-api:latest
+  repositoryName: quantity-api
+  port: 80
+  targetPort: 80
+  replicaCount: 1
+  environmentVariables:
+    PORT: 80
+    DEBUG: "*"
+    NODE_ENV: "development"
+    DB_DATABASE: "quantity"
+
+global:
+  github:
+    username: larsson-mikael
+    access_token: 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
+
+  database:
+    internal: true
+    name: postgres
+    image: postgres
+    username: root
+    password: root
+    port: 5432
+
+  tls:
+    cert: |
+      aslkdfjalösdkf
+
+    key: |
+      alösjdföalskdf

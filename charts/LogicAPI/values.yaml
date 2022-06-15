@@ -1,0 +1,31 @@
+service:
+  name: logic
+  image: logic:latest
+  repositoryName: LogicAPI
+  port: 80
+  targetPort: 80
+  replicas: 1
+  environmentVariables:
+    ASPNETCORE_ENVIRONMENT: Development
+  database:
+  - name: EquationConnection
+    databaseName: lugo_logic
+
+
+global:
+  github:
+    username: USERNAME 
+    access_token: TOKEN 
+
+  database:
+    host: host.minikube.internal
+    username: root
+    password: root
+    port: 5432
+
+  tls:
+    cert: |
+      xxx
+
+    key: |
+      xxx

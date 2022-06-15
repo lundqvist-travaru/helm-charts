@@ -1,0 +1,8 @@
+image: postgres
+
+global:
+  database:
+    username: root
+    password: root
+    host: postgres-service
+    port: 5432
