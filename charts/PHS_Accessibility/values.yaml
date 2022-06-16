@@ -12,10 +12,6 @@ service:
     databaseName: lundqvist_phsm2
 
 global:
-  github:
-    username: USERNAME 
-    access_token: TOKEN 
-
   database:
     host: host.minikube.internal
     username: root
