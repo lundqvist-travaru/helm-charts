@@ -1,0 +1,98 @@
+identity:
+  releaseNameOverride: identity
+  service:
+    image: lugoidentity:latest
+    pullPolicy: Always
+
+frontend:
+  releaseNameOverride: frontend
+  service:
+    image: lugo_frontend:latest
+    pullPolicy: Always
+
+capacity:
+  releaseNameOverride: capacity
+  service:
+    image: capacityapi:latest
+    pullPolicy: Always
+
+contractor:
+  releaseNameOverride: contractor
+  service:
+    image: contractorapi:latest
+    pullPolicy: Always
+
+customer:
+  releaseNameOverride: customer
+  service:
+    image: customerapi:latest
+    pullPolicy: Always
+
+distance:
+  releaseNameOverride: distance
+  service:
+    image: distanceapi:latest
+    pullPolicy: Always
+
+logic:
+  releaseNameOverride: logic
+  service:
+    image: logicapi:latest
+    pullPolicy: Always
+
+order:
+  releaseNameOverride: order
+  service:
+    image: orderapi:latest
+    pullPolicy: Always
+
+phs_accessibility:
+  releaseNameOverride: phs-accessibility
+  service:
+    image: phs_accessibility:latest
+    pullPolicy: Always
+
+phs_main:
+  releaseNameOverride: phs-main
+  service:
+    image: phs_main:latest
+    pullPolicy: Always
+
+productomatic:
+  releaseNameOverride: productomatic
+  service:
+    image: productomaticapi:latest
+    pullPolicy: Always
+
+purchase:
+  releaseNameOverride: purchase
+  service:
+    image: purchaseapi:latest
+    pullPolicy: Always
+
+quantity:
+  releaseNameOverride: quantity
+  service:
+    image: quantity-api:latest
+    pullPolicy: Always
+
+supplier:
+  releaseNameOverride: supplier
+  service:
+    image: supplierapi:latest
+    pullPolicy: Always
+
+
+global:
+  database:
+    host: host.minikube.interal
+    username: root 
+    password: root 
+    port: 5432
+
+  tls:
+    cert: |
+      test
+
+    key: |
+      test

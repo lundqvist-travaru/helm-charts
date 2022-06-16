@@ -1,0 +1,45 @@
+dependencies:
+- name: identity
+  repository: file://../../charts/LugoIdentity
+  version: 0.1.0
+- name: frontend
+  repository: file://../../charts/LUGO_Frontend
+  version: 0.1.0
+- name: capacity
+  repository: file://../../charts/CapacityAPI
+  version: 0.1.0
+- name: contractor
+  repository: file://../../charts/ContractorAPI
+  version: 0.1.0
+- name: customer
+  repository: file://../../charts/CustomerApi
+  version: 0.1.0
+- name: distance
+  repository: file://../../charts/DistanceAPI
+  version: 0.1.0
+- name: logic
+  repository: file://../../charts/LogicAPI
+  version: 0.1.0
+- name: order
+  repository: file://../../charts/OrderApi
+  version: 0.1.0
+- name: phs_accessibility
+  repository: file://../../charts/PHS_Accessibility
+  version: 0.1.0
+- name: phs_main
+  repository: file://../../charts/PHS_Main
+  version: 0.1.0
+- name: productomatic
+  repository: file://../../charts/ProductomaticAPI
+  version: 0.1.0
+- name: purchase
+  repository: file://../../charts/PurchaseAPI
+  version: 0.1.0
+- name: quantity
+  repository: file://../../charts/quantity-api
+  version: 0.1.0
+- name: supplier
+  repository: file://../../charts/SupplierApi
+  version: 0.1.0
+digest: sha256:fdbf199536180a6687f6b3df4b559427faeac5f15a39fd4613f3dd2635b3230d
+generated: "2022-06-16T09:35:52.9898478+02:00"
