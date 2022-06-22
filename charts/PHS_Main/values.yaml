@@ -21,10 +21,3 @@ global:
     username: root
     password: root
     port: 5432
-
-  tls:
-    cert: |
-      xxx
-
-    key: |
-      xxx
