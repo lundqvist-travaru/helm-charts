@@ -1,6 +1,6 @@
 dependencies:
 - name: lugo
   repository: https://lundqvist-travaru.github.io/helm-charts
-  version: 1.2.38
-digest: sha256:8e79d38f444586e5a054c2f0eb2e36b1c6dabdb9e52b952ea9ace64907e796f7
-generated: "2022-06-15T14:23:52.2889267+02:00"
+  version: 1.2.42
+digest: sha256:97fe1fe7937fbc9ba6477cf8fca40feb986463ddcc7fe4ab13429385567f4159
+generated: "2022-06-28T13:41:23.4305731+02:00"
