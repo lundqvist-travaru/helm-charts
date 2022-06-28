@@ -84,6 +84,7 @@ supplier:
 
 
 global:
+  aws: false
   database:
     host: host.minikube.interal
     username: root 

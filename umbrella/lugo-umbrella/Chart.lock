@@ -42,4 +42,4 @@ dependencies:
   repository: file://../../charts/SupplierApi
   version: 0.1.0
 digest: sha256:fdbf199536180a6687f6b3df4b559427faeac5f15a39fd4613f3dd2635b3230d
-generated: "2022-06-16T09:35:52.9898478+02:00"
+generated: "2022-06-27T13:35:48.7849559+02:00"
