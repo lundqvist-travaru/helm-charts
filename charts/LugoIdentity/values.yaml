@@ -7,9 +7,9 @@ service:
   replicas: 1
 
   environmentVariables:
-    IDENTITY_PUBLIC_URL: http://identity.lugo.local
+    IDENTITY_PUBLIC_URL: https://identity.lugo.local
     ASPNETCORE_ENVIRONMENT: Development
-    IdentityBaseAddress: http://identity-service
+    IdentityBaseAddress: https://identity.lugo.local
     IdentityRedirectUri: https://lugo.local
 
   ingress:
