@@ -17,7 +17,7 @@ service:
 
   database:
   - name: DefaultConnection
-    databaseName: Identity
+    databaseName: identity
 
 global:
   database:
