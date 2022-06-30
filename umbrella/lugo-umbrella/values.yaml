@@ -10,6 +10,12 @@ parcels:
     image: parcelsapi:latest
     pullPolicy: Always
 
+transport:
+  releaseNameOverride: transport
+  service:
+    image: 879032840002.dkr.ecr.eu-north-1.amazonaws.com/transportreservationapi:latest-dev
+    pullPolicy: Always
+
 frontend:
   releaseNameOverride: frontend
   service:
