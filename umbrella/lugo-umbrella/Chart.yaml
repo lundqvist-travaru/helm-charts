@@ -66,3 +66,6 @@ dependencies:
   - name: supplier
     version: "*"
     repository: "file://../../charts/SupplierApi"
+  - name: parcels
+    version: "*"
+    repository: "file://../../charts/ParcelsAPI"
