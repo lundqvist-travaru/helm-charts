@@ -69,3 +69,6 @@ dependencies:
   - name: parcels
     version: "*"
     repository: "file://../../charts/ParcelsAPI"
+  # - name: transport
+  #   version: "*"
+  #   repository: "file://../../charts/TransportReservationAPI"
