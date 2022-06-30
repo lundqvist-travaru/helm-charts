@@ -45,4 +45,4 @@ dependencies:
   repository: file://../../charts/ParcelsAPI
   version: 0.1.0
 digest: sha256:890ec55827488a3c07d080ee3e5d85679cb5bff777c544c597e48fc7876a5fc0
-generated: "2022-06-30T11:44:42.7920022+02:00"
+generated: "2022-06-30T14:12:18.3734617+02:00"
