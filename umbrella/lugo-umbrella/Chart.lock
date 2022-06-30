@@ -41,5 +41,8 @@ dependencies:
 - name: supplier
   repository: file://../../charts/SupplierApi
   version: 0.1.0
-digest: sha256:fdbf199536180a6687f6b3df4b559427faeac5f15a39fd4613f3dd2635b3230d
-generated: "2022-06-27T13:35:48.7849559+02:00"
+- name: parcels
+  repository: file://../../charts/ParcelsAPI
+  version: 0.1.0
+digest: sha256:890ec55827488a3c07d080ee3e5d85679cb5bff777c544c597e48fc7876a5fc0
+generated: "2022-06-30T11:44:42.7920022+02:00"
