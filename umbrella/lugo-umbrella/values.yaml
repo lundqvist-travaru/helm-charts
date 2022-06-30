@@ -4,6 +4,12 @@ identity:
     image: lugoidentity:latest
     pullPolicy: Always
 
+parcels:
+  releaseNameOverride: parcels
+  service:
+    image: parcelsapi:latest
+    pullPolicy: Always
+
 frontend:
   releaseNameOverride: frontend
   service:

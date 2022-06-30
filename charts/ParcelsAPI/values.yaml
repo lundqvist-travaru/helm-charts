@@ -1,0 +1,21 @@
+service:
+  name: parcels
+  image: parcelsapi:latest
+  pullPolicy: Never
+  port: 80
+  targetPort: 80
+  replicas: 1
+
+  environmentVariables:
+    ASPNETCORE_ENVIRONMENT: Development
+
+  database:
+    - name: DefaultConnection
+      databaseName: parcels
+
+global:
+  database:
+    host: host.minikube.internal
+    username: root
+    password: root
+    port: 5432
